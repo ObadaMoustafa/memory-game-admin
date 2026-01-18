@@ -1,59 +1,48 @@
-# MemoryAdmin
+# Memory Game - Admin Dashboard (Final)
 
-This project was generated using [Angular CLI](https://github.com/angular/angular-cli) version 21.1.0.
+A professional, responsive Angular Admin Dashboard built to manage and monitor the Memory Game activity. This project focuses on **Advanced Angular Features**, **Security**, and **Clean Code** principles.
 
-## Development server
+## 🚀 Features
 
-To start a local development server, run:
+- **Authentication & Authorization**: Full JWT integration with secure Login and Route Guards.
+- **Real-time Statistics**: Aggregate data visualization for game performance.
+- **Player Management**: Interactive table to view and manage player data.
+- **Activity Monitoring**: Tracking game dates and session history.
+- **Security Interceptor**: Global HTTP interceptor for automatic token injection and 401/403 error handling.
+- **Modern UI**: Built with **Angular Material**, following a "Mobile First" and responsive design approach.
 
-```bash
-ng serve
-```
+## 🛠️ Tech Stack
 
-Once the server is running, open your browser and navigate to `http://localhost:4200/`. The application will automatically reload whenever you modify any of the source files.
+- **Framework**: Angular v21 (using Signals API).
+- **Language**: TypeScript (Strict Typing).
+- **Styling**: Angular Material & CSS Grid/Flexbox.
+- **State Management**: Angular Signals for efficient, reactive UI updates.
+- **HTTP Client**: Standalone HttpClient with functional Interceptors.
 
-## Code scaffolding
+## 📦 Installation & Setup
 
-Angular CLI includes powerful code scaffolding tools. To generate a new component, run:
+1.  **Install dependencies**:
 
-```bash
-ng generate component component-name
-```
+    ```bash
+    npm install
+    ```
 
-For a complete list of available schematics (such as `components`, `directives`, or `pipes`), run:
+2.  **Run the development server**:
+    ```bash
+    npm start || ng serve
+    ```
+    Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
 
-```bash
-ng generate --help
-```
+## 🔐 Credentials (Admin)
 
-## Building
+- **Username**: `Henk` , **Username**: `henk`
+- **Role**: Administrator access required for `/admin` endpoints.
 
-To build the project run:
+## 🏗️ Project Structure
 
-```bash
-ng build
-```
+- `src/app/components`: Feature-specific components (Login, Dashboard, Stats, etc.).
+- `src/app/services`: Business logic and API communication.
+- `src/app/interceptors`: Global HTTP logic and security handling.
+- `src/app/guards`: Route protection logic.
 
-This will compile your project and store the build artifacts in the `dist/` directory. By default, the production build optimizes your application for performance and speed.
-
-## Running unit tests
-
-To execute unit tests with the [Vitest](https://vitest.dev/) test runner, use the following command:
-
-```bash
-ng test
-```
-
-## Running end-to-end tests
-
-For end-to-end (e2e) testing, run:
-
-```bash
-ng e2e
-```
-
-Angular CLI does not come with an end-to-end testing framework by default. You can choose one that suits your needs.
-
-## Additional Resources
-
-For more information on using the Angular CLI, including detailed command references, visit the [Angular CLI Overview and Command Reference](https://angular.dev/tools/cli) page.
+---
