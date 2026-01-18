@@ -30,12 +30,16 @@ export class AuthService {
       );
   }
 
-  logout() {
+  logout(message?: string) {
     localStorage.removeItem('token');
     localStorage.removeItem('user');
     this.currentUser.set(null);
     this.isAuthenticated.set(false);
-    this.router.navigate(['/login']);
+    if (message) {
+      this.router.navigate(['/login'], { state: { error: message } });
+    } else {
+      this.router.navigate(['/login']);
+    }
   }
 
   getToken() {

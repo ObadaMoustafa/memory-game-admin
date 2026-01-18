@@ -20,9 +20,13 @@ export const authInterceptor: HttpInterceptorFn = (req, next) => {
 
   return next(clonedRequest).pipe(
     catchError((error: HttpErrorResponse) => {
+      // Logout if the user is not an admin or the token is invalid/expired
       if (error.status === 401) {
-        authService.logout();
+        authService.logout('Session expired. Please log in again.');
+      } else if (error.status === 403) {
+        authService.logout('You do not have permission to access this resource.');
       }
+
       return throwError(() => error);
     })
   );

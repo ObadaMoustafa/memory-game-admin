@@ -6,11 +6,11 @@ import { MatToolbarModule } from '@angular/material/toolbar';
 import { MatListModule } from '@angular/material/list';
 import { MatIconModule } from '@angular/material/icon';
 import { MatButtonModule } from '@angular/material/button';
-import { MatProgressSpinnerModule } from '@angular/material/progress-spinner'; // Added
+import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
 import { map } from 'rxjs/operators';
 import { toSignal } from '@angular/core/rxjs-interop';
 import { AuthService } from '../../services/auth.service';
-import { AdminDataService } from '../../services/admin-data.service'; // Added
+import { AdminDataService } from '../../services/admin-data.service';
 
 @Component({
   selector: 'app-dashboard',
@@ -24,7 +24,7 @@ import { AdminDataService } from '../../services/admin-data.service'; // Added
     MatListModule,
     MatIconModule,
     MatButtonModule,
-    MatProgressSpinnerModule, // Added
+    MatProgressSpinnerModule,
   ],
   templateUrl: './dashboard.component.html',
   styleUrl: './dashboard.component.css',
@@ -32,7 +32,7 @@ import { AdminDataService } from '../../services/admin-data.service'; // Added
 export class DashboardComponent {
   private readonly breakpointObserver = inject(BreakpointObserver);
   private readonly authService = inject(AuthService);
-  public readonly adminService = inject(AdminDataService); // Added
+  public readonly adminService = inject(AdminDataService);
   public readonly username = this.authService.currentUser;
 
   isHandset = toSignal(
