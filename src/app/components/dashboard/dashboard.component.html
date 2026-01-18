@@ -36,15 +36,20 @@
           <mat-icon>menu</mat-icon>
         </button>
         }
-        <span>Admin Dashboard</span>
+        <span>Admin Dashboard ( {{ username() }} )</span>
       </div>
-
-      <button mat-icon-button (click)="onLogout()" title="Logout">
+      <button type="button" mat-icon-button (click)="onLogout()" title="Logout">
         <mat-icon>logout</mat-icon>
       </button>
     </mat-toolbar>
 
     <main class="main-content">
+      @if (adminService.loading()) {
+      <div class="loading-overlay">
+        <mat-spinner diameter="50"></mat-spinner>
+      </div>
+      }
+
       <router-outlet />
     </main>
   </mat-sidenav-content>

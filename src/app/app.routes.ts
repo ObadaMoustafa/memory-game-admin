@@ -16,7 +16,7 @@ export const routes: Routes = [
       { path: 'stats', component: StatsComponent },
       { path: 'players', component: PlayersComponent },
       { path: 'dates', component: DatesComponent },
-      { path: '', redirectTo: '', pathMatch: 'full' },
+      { path: '', redirectTo: 'stats', pathMatch: 'full' },
     ],
   },
   { path: '**', redirectTo: 'login' },
