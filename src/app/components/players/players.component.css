@@ -1,0 +1,21 @@
+.players-card {
+  margin: 10px;
+}
+
+.table-container {
+  margin-top: 20px;
+  overflow-x: auto;
+}
+
+table {
+  width: 100%;
+}
+
+.mat-column-username {
+  font-weight: 500;
+}
+
+.mat-header-cell {
+  color: #3f51b5;
+  font-size: 1.1em;
+}

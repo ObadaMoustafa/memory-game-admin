@@ -1,0 +1,34 @@
+<div class="stats-grid">
+  <mat-card class="stat-card">
+    <mat-card-header>
+      <mat-icon mat-card-avatar color="primary">videogame_asset</mat-icon>
+      <mat-card-title>{{ totalGames() }}</mat-card-title>
+      <mat-card-subtitle>Total Games Played</mat-card-subtitle>
+    </mat-card-header>
+  </mat-card>
+
+  <mat-card class="stat-card">
+    <mat-card-header>
+      <mat-icon mat-card-avatar color="accent">people</mat-icon>
+      <mat-card-title>{{ totalPlayers() }}</mat-card-title>
+      <mat-card-subtitle>Registered Players</mat-card-subtitle>
+    </mat-card-header>
+  </mat-card>
+
+  <mat-card class="full-width">
+    <mat-card-header>
+      <mat-card-title>API Usage Overview</mat-card-title>
+    </mat-card-header>
+    <mat-card-content>
+      <div class="api-list">
+        @for (item of apiStats(); track item.api) {
+        <div class="api-item">
+          <span class="api-name">{{ item.api || 'Default' }}</span>
+          <span class="api-count">{{ item.aantal }} uses</span>
+          <mat-divider></mat-divider>
+        </div>
+        }
+      </div>
+    </mat-card-content>
+  </mat-card>
+</div>

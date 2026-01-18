@@ -8,7 +8,25 @@
   "projects": {
     "memory-admin": {
       "projectType": "application",
-      "schematics": {},
+      "schematics": {
+        "@schematics/angular:component": {
+          "standalone": true,
+          "displayBlock": true,
+          "style": "css",
+          "type": "component",
+          "skipTests": true
+        },
+        "@schematics/angular:service": {
+          "type": "service",
+          "skipTests": true
+        },
+        "@schematics/angular:module": {
+          "type": "module"
+        },
+        "@schematics/angular:interceptor": {
+          "skipTests": true
+        }
+      },
       "root": "",
       "sourceRoot": "src",
       "prefix": "app",
@@ -24,9 +42,7 @@
                 "input": "public"
               }
             ],
-            "styles": [
-              "src/styles.css"
-            ]
+            "styles": ["src/material-theme.scss", "src/styles.css"]
           },
           "configurations": {
             "production": {

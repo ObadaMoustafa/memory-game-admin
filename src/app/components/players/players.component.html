@@ -1,0 +1,30 @@
+<mat-card class="players-card">
+  <mat-card-header>
+    <mat-icon mat-card-avatar color="primary">group</mat-icon>
+    <mat-card-title>Registered Players</mat-card-title>
+    <mat-card-subtitle>Manage and view all users in the system</mat-card-subtitle>
+  </mat-card-header>
+
+  <mat-card-content>
+    <div class="table-container">
+      <table mat-table [dataSource]="adminService.players()" class="mat-elevation-z0">
+        <ng-container matColumnDef="username">
+          <th mat-header-cell *matHeaderCellDef>Username</th>
+          <td mat-cell *matCellDef="let player">{{ player.username }}</td>
+        </ng-container>
+
+        <ng-container matColumnDef="email">
+          <th mat-header-cell *matHeaderCellDef>Email Address</th>
+          <td mat-cell *matCellDef="let player">{{ player.email }}</td>
+        </ng-container>
+
+        <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+        <tr mat-row *matRowDef="let row; columns: displayedColumns"></tr>
+
+        <tr class="mat-row" *matNoDataRow>
+          <td class="mat-cell" colspan="2">No players found or data is loading...</td>
+        </tr>
+      </table>
+    </div>
+  </mat-card-content>
+</mat-card>
